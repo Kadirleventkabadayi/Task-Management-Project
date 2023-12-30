@@ -1,0 +1,84 @@
+.allForm {
+  position: fixed;
+  top: 20%;
+  right: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 32px #1d5d9b;
+  margin: 0 10px;
+  width: 30vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block-end: 5%;
+  width: 80%;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #1d5d9b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.loginBtn {
+  width: 100%;
+}
+.googleBtn {
+  background-color: #f4d160;
+}
+.formInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 5%;
+}
+.formInfo p {
+  margin: 0px;
+}
+.formInfo h3 {
+  margin-top: 0px;
+}
+.form p {
+  width: 100%;
+}
+
+.leftAlign {
+  text-align: left;
+}
+
+.rightAlign {
+  text-align: right;
+  font-size: 13px;
+  color: #1d5d9b;
+  cursor: pointer;
+}
+.formInfo h1 {
+  font-size: 55px;
+  color: #1d5d9b;
+}

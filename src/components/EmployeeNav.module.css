@@ -1,0 +1,25 @@
+.Container {
+  display: flex;
+  background-color: #fffef9;
+  width: 100%;
+  padding-top: 2%;
+  height: 12vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Nav {
+  list-style-type: none;
+  display: flex;
+  gap: 25%;
+
+  margin: 0;
+  padding: 0;
+}
+.Nav li {
+  cursor: pointer;
+}
+.Nav li:hover {
+  color: #1d5d9b;
+  border-bottom: #1d5d9b solid;
+}

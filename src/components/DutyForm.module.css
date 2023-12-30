@@ -1,0 +1,48 @@
+.Container {
+  width: 20%;
+  background-color: #fffef9;
+  padding-inline-start: 2%;
+  padding-top: 5%;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.DutyForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-block: 10%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  resize: none;
+}
+textarea {
+  height: 192px;
+}
+
+button {
+  margin-top: 10px; /* Düğmeyi biraz yukarıda bırak */
+  padding: 10px;
+  background-color: #1d5d9b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4290df;
+}

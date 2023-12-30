@@ -1,0 +1,19 @@
+.btn {
+  position: fixed;
+  top: 1%;
+  right: 2%;
+  padding: 0 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #1d5d9b;
+  background: white;
+  display: flex;
+  font-size: larger;
+  transition: box-shadow 0.3s, color 0.3s;
+  font-weight: bold;
+  user-select: none;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 32px #4290df;
+  color: #4290df;
+}

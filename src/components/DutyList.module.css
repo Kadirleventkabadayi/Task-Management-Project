@@ -1,0 +1,13 @@
+.Container {
+  display: flex;
+  justify-content: center;
+  background-color: #fffef9;
+  padding-top: 4.1%;
+  width: 90vw;
+}
+.Container ul {
+  list-style-type: none;
+  width: 45vw;
+  margin: 0;
+  padding: 0;
+}

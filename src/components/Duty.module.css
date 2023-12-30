@@ -1,0 +1,80 @@
+.Container {
+  display: flex;
+  gap: 5%;
+  border-bottom: 2px solid #ccc;
+  padding: 1%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: filter 1s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.Container img {
+  aspect-ratio: 1/1;
+  height: 96px;
+}
+
+.Submit {
+  filter: drop-shadow(0 0 32px #1d5d9b);
+}
+.Report {
+  filter: drop-shadow(0 0 32px #f52121 );
+}
+.Start {
+  filter: drop-shadow(0 0 12px #50d129);
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.Head {
+  display: flex;
+  gap: 1%;
+  width: 100%;
+  justify-content: space-around;
+}
+.Head h5 {
+  color: #1d5d9b;
+}
+
+.Base {
+  display: flex;
+  gap: 1%;
+  width: 45%;
+}
+.Base h3 {
+  color: #1d5d9b;
+}
+
+.Partners {
+  display: flex;
+  justify-content: center;
+}
+
+.Partners h4 {
+  margin-inline-end: 1%;
+}
+
+.Duty {
+  margin-right: auto;
+}
+.Duty p {
+  white-space: pre-line;
+  text-align: start;
+}
+
+.btns {
+  display: flex;
+  gap: 1%;
+  justify-content: center;
+  width: 100%;
+}
+
+.btns button:hover {
+  transition: background-color 0.2s ease;
+  background-color: #4290df;
+}
