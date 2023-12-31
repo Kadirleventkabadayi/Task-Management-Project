@@ -3,14 +3,14 @@ import classes from "./Duty.module.css";
 import ReportForm from "./ReportForm";
 import { setDutyBody } from "../utils/setDutyBody";
 import { setPanding } from "../utils/setPanding";
-const apiUrlBasic = "http://192.168.187.86:8080/api/v1/worker/task/panding/";
+const apiUrlBasic = "http://31.223.6.113:8080/api/v1/worker/task/panding/";
 
 const Duty = ({ id, onSubmit, task }) => {
-  console.log(task);
   const [status, setStatus] = useState("Panding");
   const [prevStatus, setPrevStatus] = useState("Panding");
   const [isVisible, setIsVisible] = useState(true);
   const [visibleForm, setVisibleForm] = useState(false);
+  const [isReportSubmitted, setReportSubmitted] = useState(false);
 
   useEffect(() => {
     // task prop'u değiştiğinde status'u güncelle
@@ -75,7 +75,10 @@ const Duty = ({ id, onSubmit, task }) => {
         <ReportForm
           task={task}
           oldContent={task.report_body}
-          onSubmit={() => setVisibleForm(false)}
+          onSubmit={() => {
+            setVisibleForm(false);
+            setReportSubmitted(true);
+          }}
           onComplete={() => setIsVisible(false)}
           onCancel={() => {
             setVisibleForm(false);
@@ -83,7 +86,7 @@ const Duty = ({ id, onSubmit, task }) => {
           }}
         />
       )}
-      {isVisible && (
+      {isVisible && !isReportSubmitted && (
         <div className={containerClass}>
           <img
             src="https://cdn-icons-png.flaticon.com/256/17/17004.png"

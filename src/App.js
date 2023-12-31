@@ -15,7 +15,7 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         {
-          path: "/a",
+          path: "",
           element: <DutyPage />,
           errorElement: <ErrorPage />,
         },

@@ -1,0 +1,24 @@
+.btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 20%;
+  margin-left: 2%;
+}
+.userbtn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  width: 20%;
+  height: 6%;
+  justify-content: center;
+}
+.innerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}

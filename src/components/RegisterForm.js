@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import classes from "./RegisterForm.module.css";
 import { register } from "../utils/register";
 
-const apiUrl = "http://192.168.187.86:8080/api/v1/admin/worker";
+const apiUrl = "http://31.223.6.113:8080/api/v1/admin/worker";
 
 const RegisterForm = () => {
   const [code, setCode] = useState();

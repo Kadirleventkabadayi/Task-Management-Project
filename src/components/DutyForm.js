@@ -3,7 +3,7 @@ import classes from "./DutyForm.module.css"; // DutyForm'un stil dosyası
 import { getEmail } from "../utils/getEmails";
 import { addDuty } from "../utils/addDuty";
 
-const apiUrl = "http://192.168.187.86:8080/api/v1/admin/worker/";
+const apiUrl = "http://31.223.6.113:8080/api/v1/admin/worker/";
 
 const DutyForm = () => {
   const [dutyName, setDutyName] = useState("");
@@ -43,22 +43,29 @@ const DutyForm = () => {
       worker_email: workerEmail,
     };
 
-    addDuty(
-      "http://192.168.187.86:8080/api/v1/admin/task",
-      newDuty,
-      storedToken
-    );
+    addDuty("http://31.223.6.113:8080/api/v1/admin/task", newDuty, storedToken);
 
     setDutyName("");
     setDutyDate("");
     setDutyContent("");
+    setEmailInput("");
+    setWorkerEmail([]);
+    setEmailData({ workers: [] });
   };
 
   const handleItemClick = (email) => {
     console.log("Clicked worker email:", email);
-    setWorkerEmail((prev) => [...prev, email]);
+
+    if (workerEmail.includes(email)) {
+      setWorkerEmail((prev) => prev.filter((prevEmail) => prevEmail !== email));
+    } else {
+      setWorkerEmail((prev) => [...prev, email]);
+    }
   };
 
+  const handleSelectedEmailClick = (email) => {
+    setWorkerEmail((prev) => prev.filter((prevEmail) => prevEmail !== email));
+  };
   return (
     <div className={classes.Container}>
       <form className={classes.DutyForm} onSubmit={handleSubmit}>
@@ -91,19 +98,33 @@ const DutyForm = () => {
           ></textarea>
         </label>
         <label>
+          Selected Emails:
+          <div className={classes.SelectedEmails}>
+            {workerEmail.map((email) => (
+              <span
+                onClick={() => handleSelectedEmailClick(email)}
+                key={email}
+                className={classes.SelectedEmail}
+              >
+                {email}
+              </span>
+            ))}
+          </div>
+        </label>
+        <label>
           Employee
           <input
             value={emailInput}
             onChange={(e) => setEmailInput(e.target.value)}
             type="text"
-            required
           ></input>
         </label>
         <div>
-          <ul>
+          <ul className={classes.List}>
             {emailData?.workers &&
               emailData?.workers.map((worker) => (
                 <li
+                  className={classes.ListItem}
                   onClick={() => handleItemClick(worker.email)}
                   key={worker.email}
                 >

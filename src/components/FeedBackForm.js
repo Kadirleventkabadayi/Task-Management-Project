@@ -3,12 +3,12 @@ import classes from "./ReportForm.module.css";
 import { setDutyBody } from "../utils/setDutyBody";
 import { reportDuty } from "../utils/reportDuty";
 
-const apiUrl = "http://192.168.187.86:8080/api/v1/worker/task/report";
+const apiUrl = "http://31.223.6.113:8080/api/v1/admin/fedback";
 
-const FeedBackForm = ({ task, onSubmit, onCancel }) => {
+const FeedBackForm = ({ task, onSubmit, onCancel, onComplete }) => {
   const [dutyContent, setDutyContent] = useState("");
   const currentDate = new Date().toDateString();
-  const storedToken = localStorage.getItem("userToken");
+  const storedToken = localStorage.getItem("adminToken");
   const [isFormClosed, setFormClosed] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -26,6 +26,7 @@ const FeedBackForm = ({ task, onSubmit, onCancel }) => {
       setDutyContent("");
       setFormClosed(true);
       onSubmit();
+      onComplete(); // Notify the parent component about completion
     } catch (error) {
       console.error("Error:", error);
     }
@@ -42,13 +43,13 @@ const FeedBackForm = ({ task, onSubmit, onCancel }) => {
   return (
     <div className={classes.Container}>
       <form className={classes.DutyForm} onSubmit={handleSubmit}>
-        <label>Report: {task.title}</label>
+        <label>FeedBack: {task.title}</label>
         <label>
-          Report Date:
+          FeedBack Date:
           {currentDate}
         </label>
         <label>
-          Report Content
+          FeedBack Content
           <textarea
             value={dutyContent}
             onChange={(e) => setDutyContent(e.target.value)}
@@ -58,7 +59,7 @@ const FeedBackForm = ({ task, onSubmit, onCancel }) => {
           ></textarea>
         </label>
         <div className={classes.btns}>
-          <button type="submit">Report</button>
+          <button type="submit">FeedBack</button>
           <button type="button" onClick={handleCancel}>
             Cancel
           </button>

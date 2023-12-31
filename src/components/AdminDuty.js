@@ -4,7 +4,7 @@ import { setDutyBody } from "../utils/setDutyBody";
 import { acceptDuty } from "../utils/acceptDuty";
 import FeedBackForm from "./FeedBackForm";
 
-const apiUrlBasic = "http://192.168.187.86:8080/api/v1/admin/task/";
+const apiUrlBasic = "http://31.223.6.113:8080/api/v1/admin/task/";
 
 const AdminDuty = ({ id, onSubmit, report }) => {
   console.log(report);
@@ -12,6 +12,7 @@ const AdminDuty = ({ id, onSubmit, report }) => {
   const [prevStatus, setPrevStatus] = useState("Panding");
   const [isVisible, setIsVisible] = useState(true);
   const [visibleForm, setVisibleForm] = useState(false);
+  const [isFeedbackSubmitted, setFeedbackSubmitted] = useState(false);
 
   const storedToken = localStorage.getItem("adminToken");
 
@@ -23,6 +24,8 @@ const AdminDuty = ({ id, onSubmit, report }) => {
   const handleApprove = async () => {
     const realUrl = apiUrlBasic + report.id;
     acceptDuty(realUrl, storedToken);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setIsVisible(false);
   };
 
   const containerClass =
@@ -42,14 +45,14 @@ const AdminDuty = ({ id, onSubmit, report }) => {
         <FeedBackForm
           task={report}
           onSubmit={() => setVisibleForm(false)}
-          onComplete={() => setIsVisible(false)}
+          onComplete={() => setFeedbackSubmitted(true)}
           onCancel={() => {
             setVisibleForm(false);
             setStatus(prevStatus); // Önceki durumu geri yükle
           }}
         />
       )}
-      {isVisible && (
+      {isVisible && !isFeedbackSubmitted && (
         <div className={containerClass}>
           <img
             src="https://cdn-icons-png.flaticon.com/256/17/17004.png"

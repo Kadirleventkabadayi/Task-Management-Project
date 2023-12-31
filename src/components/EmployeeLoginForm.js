@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signin } from "../utils/signin";
 
-const apiUrl = "http://192.168.187.86:8080/api/v1/worker/login";
+const apiUrl = "http://31.223.6.113:8080/api/v1/worker/login";
 
 const EmployeeLoginForm = () => {
   const [code, setCode] = useState();
@@ -33,13 +33,13 @@ const EmployeeLoginForm = () => {
       setLoginEmail("");
       setLoginPassword("");
       setCode(null);
-      navigate("/a");
+      navigate("/");
     }
     if (code) {
       setLoginEmail("");
       setLoginPassword("");
       setCode(null);
-      navigate("/a");
+      navigate("/");
     }
     if (code === false) {
       alert("Please Enter Valid Inputs!");

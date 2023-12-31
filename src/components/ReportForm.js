@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import classes from "./ReportForm.module.css";
-import { setDutyBody } from "../utils/setDutyBody";
 import { reportDuty } from "../utils/reportDuty";
 
-const apiUrl = "http://192.168.187.86:8080/api/v1/worker/task/report";
+const apiUrl = "http://31.223.6.113:8080/api/v1/worker/task/report";
 
-const ReportForm = ({ task, oldContent, onSubmit, onCancel }) => {
+const ReportForm = ({ task, onSubmit, onCancel }) => {
   const [dutyContent, setDutyContent] = useState("");
   const currentDate = new Date().toDateString();
   const storedToken = localStorage.getItem("userToken");
@@ -16,7 +15,7 @@ const ReportForm = ({ task, oldContent, onSubmit, onCancel }) => {
 
     const formData = {
       report_body: dutyContent,
-      report_date: setDutyBody(oldContent, dutyContent),
+      report_date: currentDate,
       task_id: task.id,
     };
 
