@@ -3,7 +3,7 @@ import classes from "./Duty.module.css";
 import ReportForm from "./ReportForm";
 import { setDutyBody } from "../utils/setDutyBody";
 import { setPanding } from "../utils/setPanding";
-const apiUrlBasic = "http://31.223.6.113:8080/api/v1/worker/task/panding/";
+const apiUrlBasic = "http://localhost:8080/api/v1/worker/task/panding/";
 
 const Duty = ({ id, onSubmit, task }) => {
   const [status, setStatus] = useState("Panding");

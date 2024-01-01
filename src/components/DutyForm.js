@@ -3,7 +3,7 @@ import classes from "./DutyForm.module.css"; // DutyForm'un stil dosyası
 import { getEmail } from "../utils/getEmails";
 import { addDuty } from "../utils/addDuty";
 
-const apiUrl = "http://31.223.6.113:8080/api/v1/admin/worker/";
+const apiUrl = "http://localhost:8080/api/v1/admin/worker/";
 
 const DutyForm = () => {
   const [dutyName, setDutyName] = useState("");
@@ -43,7 +43,7 @@ const DutyForm = () => {
       worker_email: workerEmail,
     };
 
-    addDuty("http://31.223.6.113:8080/api/v1/admin/task", newDuty, storedToken);
+    addDuty("http://localhost:8080/api/v1/admin/task", newDuty, storedToken);
 
     setDutyName("");
     setDutyDate("");

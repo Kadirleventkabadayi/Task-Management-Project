@@ -3,7 +3,7 @@ import classes from "./ReportForm.module.css";
 import { setDutyBody } from "../utils/setDutyBody";
 import { reportDuty } from "../utils/reportDuty";
 
-const apiUrl = "http://31.223.6.113:8080/api/v1/admin/fedback";
+const apiUrl = "http://localhost:8080/api/v1/admin/fedback";
 
 const FeedBackForm = ({ task, onSubmit, onCancel, onComplete }) => {
   const [dutyContent, setDutyContent] = useState("");

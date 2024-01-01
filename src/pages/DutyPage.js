@@ -21,7 +21,7 @@ const DutyPage = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem("userToken");
-        const apiUrl = "http://31.223.6.113:8080/api/v1/worker/task?token=";
+        const apiUrl = "http://localhost:8080/api/v1/worker/task?token=";
 
         const tasks = await getDuty(apiUrl, token);
         const newReports = tasks.reports;

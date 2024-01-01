@@ -28,7 +28,7 @@ const AdminPage = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem("adminToken");
-        const apiUrl = "http://31.223.6.113:8080/api/v1/admin/reports";
+        const apiUrl = "http://localhost:8080/api/v1/admin/reports";
         const tasks = await getReports(apiUrl, token);
         const newReports = tasks.reports;
         setTasks(newReports);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./ReportForm.module.css";
 import { reportDuty } from "../utils/reportDuty";
 
-const apiUrl = "http://31.223.6.113:8080/api/v1/worker/task/report";
+const apiUrl = "http://localhost:8080/api/v1/worker/task/report";
 
 const ReportForm = ({ task, onSubmit, onCancel }) => {
   const [dutyContent, setDutyContent] = useState("");

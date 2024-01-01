@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signin } from "../utils/signin";
 
-const apiUrl = "http://31.223.6.113:8080/api/v1/admin/login";
+const apiUrl = "http://localhost:8080/api/v1/admin/login";
 
 function LoginForm() {
   const [code, setCode] = useState();

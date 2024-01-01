@@ -4,7 +4,7 @@ import { setDutyBody } from "../utils/setDutyBody";
 import { acceptDuty } from "../utils/acceptDuty";
 import FeedBackForm from "./FeedBackForm";
 
-const apiUrlBasic = "http://31.223.6.113:8080/api/v1/admin/task/";
+const apiUrlBasic = "http://localhost:8080/api/v1/admin/task/";
 
 const AdminDuty = ({ id, onSubmit, report }) => {
   console.log(report);
